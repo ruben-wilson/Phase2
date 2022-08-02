@@ -8,6 +8,5 @@ DatabaseConnection.connect('music_libary')
 
 albums = AlbumRepository.new
 
-albums.all.each{|album|
-  p album
-}
+albums.search(3).each{|album|
+  p album}

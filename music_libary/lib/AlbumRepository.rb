@@ -20,9 +20,10 @@ class AlbumRepository
   end
 
   def search(id)
-    sql = "SELECT * FROM albums WHERE id = #{id};"
+    sql = "SELECT * FROM albums WHERE id = $1;"
+    params = [id]
     albums = []
-    result_set = DatabaseConnection.exec_params(sql, [])
+    result_set = DatabaseConnection.exec_params(sql, params)
     result_set.each{|record|
       album = Album.new
       album.title = record["title"]
