@@ -1,4 +1,5 @@
-require "album"
+require_relative "album"
+
 
 class AlbumRepository
 
@@ -17,4 +18,18 @@ class AlbumRepository
   }
    return  albums 
   end
+
+  def search(id)
+    sql = "SELECT * FROM albums WHERE id = #{id};"
+    albums = []
+    result_set = DatabaseConnection.exec_params(sql, [])
+    result_set.each{|record|
+      album = Album.new
+      album.title = record["title"]
+      album.artist_id = record["artist_id"]
+      album.release_year = record["release_year"]
+      albums << album
+    }
+    return albums
+  end 
 end

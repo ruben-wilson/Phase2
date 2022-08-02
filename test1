@@ -1,3 +1,0 @@
-SELECT release_year 
-FROM ALBUMS 
-WHERE title = 'Bossanova' ;

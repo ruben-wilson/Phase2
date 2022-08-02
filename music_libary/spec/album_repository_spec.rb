@@ -26,4 +26,12 @@ RSpec.describe AlbumRepository do
     expect(albums[1].artist_id).to eq "7"
 
   end
+  it "returns correct object attributes when searching with id" do
+    repo =  AlbumRepository.new 
+    albums = repo.search(1)
+    expect(albums[0].title).to eq  'DAMN'
+    expect(albums[0].release_year).to eq  "2017"
+    expect(albums[0].artist_id).to eq '7'
+  end 
+
 end 
