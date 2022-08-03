@@ -106,7 +106,7 @@ end
 Write Ruby code that defines the expected behaviour of the Repository class, following your design from the table written in step 5.
 
 These examples will later be encoded as RSpec tests.
-
+```ruby
 # EXAMPLES
 
 # 1
@@ -138,6 +138,19 @@ albums[0].title #=> 'damn'
 albums[0].release_year #=> 2017
 albums[0].artist_id #=> 7
 
+# 3 
+# creates a new record in data base from album object
+  repo = AlbumRepository.new
+
+  album = Album.new
+  album.title = 'Trompe le Monde'
+  album.release_year = 1991
+  album.artist_id = 1
+
+  repository.create(album)
+
+  all_albums = repository.all
+  ```
 
 # Add more examples for each method
 Encode this example as a test.
