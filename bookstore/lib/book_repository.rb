@@ -3,7 +3,7 @@ require_relative "book"
 class BookRepository
   def all
     books = []
-    sql = 'SELECT * FROM books;'
+    sql = ''
     result_set = DatabaseConnection.exec_params(sql, [])
     result_set.each{|book|
       object = Book.new

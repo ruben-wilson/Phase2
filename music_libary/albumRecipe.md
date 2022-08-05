@@ -95,10 +95,27 @@ class AlbumRepository
 
     # Returns an array of Album objects.
   end
+
   def find(id)#=> int representing a id value on the sql data base 
     # return an array of objects matching the id value 
     # SELECT * FROM albums WHEN id = input;
   end
+
+    def create(album)#=> album object representing the inputs on the database table albums
+      # executes the SQL query:
+      # INSERT INTO albums (title, release_year, artist_id,) VALUES($1, $2, $3);
+
+  
+  def create(album)#=> album object representing the inputs on the database table albums
+      # executes the SQL query:
+      # INSERT INTO albums (title, release_year, artist_id,) VALUES($1, $2, $3);
+  end
+
+  def find_by_artist # finds artists by imputting albums 
+    return an array of albums 
+  end 
+
+  end 
 end
 
 6. Write Test Examples
